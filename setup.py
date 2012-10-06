@@ -6,7 +6,7 @@ setup(name='travis2tox',
       # long_description=README + '\n\n' +  CHANGES,
       packages=find_packages(),
       zip_safe=False,
-      install_requires=['PyYAML'],
+      install_requires=['PyYAML', 'docopt'],
       entry_points = """\
         [console_scripts]
         travis2tox = travis2tox.main:main
