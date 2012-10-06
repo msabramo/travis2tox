@@ -12,9 +12,8 @@ def travis_env_to_tox_env(travis_env):
 
 
 def travis2tox(in_file):
-    config     = TravisConfig(in_file)
-    envlist    = [travis_env_to_tox_env(travis_env) for travis_env in config.python]
-    commands   = config.get_all_commands()
+    config = TravisConfig(in_file)
+    envlist = map(travis_env_to_tox_env, config.python)
+    commands = config.get_all_commands()
 
     return ToxConfig(envlist, commands)
-

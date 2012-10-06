@@ -18,8 +18,11 @@ from travis2tox import travis2tox
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Convert a .travis.yml file to a tox.ini file.')
-    parser.add_argument('dot_travis_dot_yml_file', help='path to a .travis.yml file')
+    parser = argparse.ArgumentParser(
+        description='Convert a .travis.yml file to a tox.ini file.')
+    parser.add_argument(
+        'dot_travis_dot_yml_file',
+        help='path to a .travis.yml file')
     args = parser.parse_args()
 
     tox_config = travis2tox(args.dot_travis_dot_yml_file)

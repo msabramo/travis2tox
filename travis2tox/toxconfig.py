@@ -39,4 +39,3 @@ commands = $commands
             return commands[0]
         elif len(commands) > 1:
             return "\n    " + "\n    ".join(commands)
-
