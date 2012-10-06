@@ -17,6 +17,8 @@ from travis2tox import travis2tox
 
 
 def main():
+    """The ``main`` for the ``travis2tox`` program."""
+
     parser = argparse.ArgumentParser(
         description='Convert a .travis.yml file to a tox.ini file.')
     parser.add_argument(
