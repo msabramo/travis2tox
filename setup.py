@@ -7,6 +7,7 @@ setup(name='travis2tox',
       packages=find_packages(),
       zip_safe=False,
       install_requires=['PyYAML', 'docopt'],
+      test_suite='tests',
       entry_points = """\
         [console_scripts]
         travis2tox = travis2tox.main:main
