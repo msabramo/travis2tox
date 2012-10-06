@@ -12,7 +12,6 @@ tox.ini file to stdout.
 """
 
 import argparse
-import sys
 
 from travis2tox import travis2tox
 
