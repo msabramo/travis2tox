@@ -182,8 +182,7 @@ class CommandTests(unittest.TestCase):
         os.chdir(os.path.dirname(__file__))
 
     def travis2tox(self, *args):
-        travis2tox_path = os.path.join(os.path.dirname(sys.executable), "travis2tox")
-        return self.get_output_of_command((travis2tox_path,) + args)
+        return self.get_output_of_command(('travis2tox',) + args)
 
     def get_output_of_command(self, cmd):
         return subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()[0]
