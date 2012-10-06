@@ -1,3 +1,6 @@
+from string import Template
+
+
 class ToxConfig(object):
 
     def __init__(self, envlist, commands):
@@ -8,18 +11,18 @@ class ToxConfig(object):
         envlist = ', '.join(self.envlist)
         commands = self.get_commands()
 
-        return """
+        return Template("""
 # Tox (http://tox.testrun.org/) is a tool for running tests
 # in multiple virtualenvs. This configuration file will run the
 # test suite on all supported python versions. To use it, "pip install tox"
 # and then run "tox" from this directory.
 
 [tox]
-envlist = {envlist}
+envlist = $envlist
 
 [testenv]
-commands = {commands}
-        """.format(
+commands = $commands
+        """).substitute(
             envlist=envlist,
             commands=commands,
         ).lstrip()
