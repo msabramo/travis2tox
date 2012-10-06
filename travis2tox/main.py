@@ -11,18 +11,18 @@ tox.ini file to stdout.
 
 """
 
+import argparse
 import sys
-
-# http://docopt.org/
-# https://github.com/docopt/docopt
-from docopt import docopt
 
 from travis2tox import travis2tox
 
 
 def main():
-    optargs = docopt(__doc__)
-    tox_config = travis2tox(optargs['<dot_travis_dot_yml_file>'])
+    parser = argparse.ArgumentParser(description='Convert a .travis.yml file to a tox.ini file.')
+    parser.add_argument('dot_travis_dot_yml_file', help='path to a .travis.yml file')
+    args = parser.parse_args()
+
+    tox_config = travis2tox(args.dot_travis_dot_yml_file)
     print(tox_config.getvalue())
 
 
