@@ -1,7 +1,8 @@
 travis2tox
 ==========
 
-`|Build Status| <http://travis-ci.org/msabramo/travis2tox>`_
+.. image:: https://secure.travis-ci.org/msabramo/travis2tox.png
+   :target: http://travis-ci.org/msabramo/travis2tox
 
 For a Python project, take a ``.travis.yml`` file (`Travis CI`_) and output a
 ``tox.ini`` file (`Tox`_).
@@ -11,7 +12,7 @@ Example
 
 ::
 
-    $ cat .travis.yml 
+    $ cat .travis.yml
     language: python
 
     python:
@@ -34,6 +35,5 @@ Example
     [testenv]
     commands = python setup.py test
 
-.. |Build Status| image:: https://secure.travis-ci.org/msabramo/travis2tox.png
 .. _Travis CI: http://travis-ci.org/
 .. _Tox: http://tox.testrun.org/
